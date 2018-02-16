@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="coursework_1" type="forwardKinematics_dh_node" name="forwardKinematics_dh_node" output="screen"/>
+</launch>

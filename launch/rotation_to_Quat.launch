@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!--arg name="nRow" value="3"-->
+	<!--arg name="nCol" value="3"-->
+	<!--arg name="nChannel" value="1"-->
+
+	<node pkg="rostopic" type="rostopic" name="rostopic" args="pub -r 10 /rotationMatrix std_msgs/Float64MultiArray '{layout: 
+{dim:
+[{label: 'row', size: 3, stride: 9},
+ {label: 'column', size: 3, stride: 3},
+ {label: 'channel', size: 1, stride: 1}],
+ data_offset: 0},
+data: [	-0.7392,-0.3536,-0.5732,
+	-0.2803,-0.6124,0.7392,
+	-0.6124,0.7071,0.3536]}'" output="screen"/>
+
+	<node pkg="coursework_1" type="rotationMatrix_to_quat_node" name="rotationMatrix_to_quat_node" output="screen"/>
+</launch>

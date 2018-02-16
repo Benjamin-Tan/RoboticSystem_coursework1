@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="x" default="0"/>
+	<arg name="y" default="0"/>
+	<arg name="z" default="0"/>
+	<arg name="w" default="0"/>
+
+	<node pkg="rostopic" type="rostopic" name="rostopic" args="pub -r 10 /quaternion geometry_msgs/Quaternion '{x: $(arg x), y: $(arg y), z: $(arg z), w: $(arg w)}'" output="screen"/>
+
+	<node pkg="coursework_1" type="quat_to_Euler_node" name="quat_to_Euler_node" output="screen"/>
+</launch>
